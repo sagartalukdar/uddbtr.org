@@ -1,0 +1,446 @@
+ 
+
+    .recent-news-list {
+  max-height: 350px; /* Adjust the maximum height of the list to your preference */
+  overflow: hidden; /* Hide the overflowing content */
+}
+
+.recent-news-list .list {
+  animation: marquee 10s linear infinite; 
+}
+  .recent-news-list {
+  max-height: 350px; /* Adjust the maximum height of the list to your preference */
+  overflow: hidden; /* Hide the overflowing content */
+}
+
+.recent-news-list:hover .list {
+  animation-play-state: paused; /* Pause the animation on hover */
+}
+.recent-news-list2 {
+  padding-top: 20px;
+}
+.recent-news-list2 .list {
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--tertiary-border);
+  margin-bottom: 16px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.recent-news-list2 .list:hover .title {
+  color: var(--primary-color);
+}
+.recent-news-list2 .list .title {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--primary-title);
+  margin-bottom: 10px;
+}
+@media (max-width: 991px) {
+  .recent-news-list2 .list .title {
+    font-size: 16px;
+  }
+}
+.recent-news-list2 .list .date {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--primary-color);
+}
+@media (max-width: 991px) {
+  .recent-news-list2 .list .date {
+    font-size: 14px;
+  }
+}
+.recent-news-list2 .list .time {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--primary-paragraph);
+}
+@keyframes marquee {
+  0% {
+    transform: translateY(0);  
+  }
+  100% {
+    transform: translateY(-100%); 
+  }
+}
+
+.about-banner {
+    position: relative;
+}
+
+.video-player {
+    position: absolute;
+    top: 50%;                        /* Adjust as needed */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+    .video-player img  {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 100%; /* Make the video player full-width */
+    }
+}
+
+
+.video-player img {
+    width: 50px; /* Adjust the size of the play icon as needed */
+    height: auto;
+}
+.heading {
+    position: relative;
+    display: inline-block;
+}
+
+.heading .line {
+   position: absolute;
+  top: 10;
+  left: -7px;
+  height: 30%;
+  width: 3px;
+  background-color: #f41111;
+  content: '';
+}
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  /*border: 1px solid #7D8082;*/
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+
+/*.search-filter-section{
+  background: #eee;
+  box-shadow: 0 8px 8px -4px lightblue;
+}*/
+
+.search-filter-section {
+  /*box-shadow: 0.5rem 0.5rem #f9710e, -0.5rem -0.5rem #c3f8f1;*/
+}
+
+.video-thumbnail {
+    width: 100%; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+button {
+  font-family: inherit;
+  font-size: 18px;
+  background: linear-gradient(to bottom, #4dc7d9 0%,#66a6ff 100%);
+  color: white;
+  padding: 0.8em 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+  display: block;
+  margin-left: 0.4em;
+  transition: all 0.3s;
+}
+
+button svg {
+  width: 18px;
+  height: 18px;
+  fill: white;
+  transition: all 0.3s;
+}
+
+button .svg-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin-right: 0.5em;
+  transition: all 0.3s;
+}
+
+button:hover .svg-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+button:hover svg {
+  transform: rotate(45deg);
+}
+
+.button-signin {
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  background-color: rgb(0 107 179);
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #ffff;
+  gap: 10px;
+  font-weight: bold;
+  border: 3px solid #ffffff4d;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button-signin:hover {
+  transform: scale(1.05);
+  border-color: #fff9;
+}
+
+.button-signin:hover .icon {
+  transform: translate(4px);
+}
+
+.button-signin:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+
+.button-signin::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+ @-webkit-keyframes blinker {
+                from {opacity: 1.0;}
+                to {opacity: 0.0;}
+                }
+                .blink{
+                    text-decoration: blink;
+                    -webkit-animation-name: blinker;
+                    -webkit-animation-duration: 0.6s;
+                    -webkit-animation-iteration-count:infinite;
+                    -webkit-animation-timing-function:ease-in-out;
+                    -webkit-animation-direction: alternate;
+                }
+  .offer-banner {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust overlay color and opacity */
+}
+
+.offer-content-two {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff; /* Text color */
+    z-index: 1; /* Ensure content is above the overlay */
+}
+
+.offer-content-two p {
+    margin-bottom: 20px; /* Adjust spacing as needed */
+}
+.offer-banner::before{
+   content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust overlay color and opacity */
+}
+
+.mask {
+    position: absolute;
+    background-size: cover;
+    background-position: center center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    opacity: 0.8;
+}
+
+.bg-gradient-grievance {
+    /*background-image: linear-gradient(310deg, rgba(33, 82, 255, 0.8) 0%, rgba(33, 212, 253, 0.8) 100%); /* Adjust opacity of gradient stops */
+    /*background-image: linear-gradient(310deg, rgba(125, 146, 221, 0.8) 0%, rgb(151, 232, 225) 100%);*/
+   background-image: linear-gradient(310deg, rgb(21, 21, 20) 0%, rgba(14, 16, 17, 0.8) 100%);
+}

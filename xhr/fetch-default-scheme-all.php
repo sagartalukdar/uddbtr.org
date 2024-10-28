@@ -1,0 +1,83 @@
+<?php
+
+    include '../classes/Crud.php';
+    $crud = new Crud();
+    $UDDSchemes=$crud->Read('schemes',"1 order by `id` desc");
+
+    // UDD SCHEME
+    if ($UDDSchemes) {
+        $output = '';
+        $c=0;
+        foreach ($UDDSchemes as $udd) {
+            $c++;
+            $schemeId = htmlspecialchars($udd['id']); 
+            $image = htmlspecialchars($udd['image']); 
+            $schemeName = htmlspecialchars($udd['scheme_name']);
+            $date = date('F j, Y', strtotime($udd['date'])); 
+            $encodedSchemeId = base64_encode($schemeId);
+        ?>
+            <li class="list" style="display: flex;justify-content: space-between;align-items: center;padding-left: 22px;padding-right: 22px;">
+                <a href="scheme-details?id=' <?= $encodedSchemeId; ?> '">
+                    <div style="display: flex;align-items: center;gap: 2rem;">
+
+                        <div>
+                            <?php
+                                if($udd['image']){
+                            ?>                           
+                                <img src="admin/<?= $udd['image']; ?>" style="width: 6rem;height: 5rem;border-radius:6px;" alt="">
+                            <?php
+                                }else{
+                            ?>
+                                <img src="admin/img/others/empty.jpg" style="width: 6rem;height: 5rem;border-radius:6px;" alt="">
+                            <?php
+                                }
+                            ?>
+                        </div>
+                        <div>
+                            <div class="title line-clamp-2">                       
+                                <h6>                                     
+                                   <?= $udd['scheme_name'] ?>                                  
+                                <?php
+                                    if($c==1){
+                                        echo '<img class="blink" src="assets/images/icon/n1.png" style="max-width: 60px">';
+                                    }
+                                ?>
+                                </h6>                                                             
+                            </div>
+                            <div class="d-flex justify-content-between flex-wrap gap-8">
+                                <div class="d-flex align-items-center gap-8">
+
+                                <p class="date">
+                                    <?= date('F j, Y', strtotime($udd['date'])) ?>
+                                </p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+                
+                <div>
+
+                <?php
+                    if($udd['pdf']){
+                ?>
+                    <a href="admin/<?= $udd['pdf']; ?>" target="_blank">
+                    <img src="admin/img/organizationInfo/pdfcover.png" style="width: 30px;height: 30px;cursor: pointer;" alt="">
+                    </a>
+                <?php
+                    }
+                ?>
+
+                </div>
+            </li>
+        <?php           
+        }
+       
+    } else {
+        echo '<p style="color:red; font-weight:700">No schemes found.</p>';
+    }
+
+?>

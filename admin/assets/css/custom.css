@@ -1,0 +1,74 @@
+
+/*floating-form*/
+.form-floating {
+    position: relative;
+    margin-bottom: 1rem;
+
+}
+
+.form-floating input,
+.form-floating select,
+.form-floating textarea,
+.form-floating .flatpickr-input {
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background-color: #fff;
+    border: 0.5px solid #ced4da;
+      /*border: none;*/
+    border-bottom: 2px solid #00ff4c;
+    transition: border-bottom 0.3s ease;
+    outline: none; 
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-floating label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: .375rem .75rem;
+    font-size: 15px;
+    font-weight: 700;
+    pointer-events: none;
+    color: #495057;
+    transition: top 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+/* Animation for label when input gets focus */
+.form-floating input:focus ~ label,
+.form-floating select:focus ~ label,
+.form-floating textarea:focus ~ label,
+.form-floating .flatpickr-input:not(:placeholder-shown) + label {
+    top: -0.5rem;
+    font-size: 1rem;
+    color: #6c757d;
+    font-weight: 700;
+}
+/*floating-form ends*/
+
+/*border-datatable*/
+.datatables-users {
+  border-collapse: collapse;
+  width: 100%;
+  }
+  .datatables-users th, 
+  .datatables-users td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+  text-align: left;
+  }
+  .datatables-users tr:nth-child(even) {
+  background-color: #f2f2f2;
+  }
+  .datatables-users tr:hover {
+  background-color: #ddd;
+  }
+  .data{
+  color: #25aee3;
+  font-weight: 700;
+  }
+/*border-datable ends*/

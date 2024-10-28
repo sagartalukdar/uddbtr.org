@@ -1,0 +1,19 @@
+# Run Php without filename extension
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php
+
+# Return 404 if original request is .php
+RewriteCond %{THE_REQUEST} "^[^ ]* .*?\.php[? ].*$"
+RewriteRule .* - [L,R=404]
+
+RewriteCond %{REQUEST_URI} ^/404/$
+
+RewriteRule ^(.*)$ /not-found [L]
+
+ErrorDocument 404 https://uddbtr.org/404-error
+
+ErrorDocument 403 https://uddbtr.org/403-error
+ErrorDocument 500 https://uddbtr.org/500-error
